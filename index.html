@@ -170,7 +170,7 @@
   let folders = [];
 
   async function fetchData() {
-    const res = await fetch("https://raw.githubusercontent.com/aktarruhin14-del/File-storage/refs/heads/main/Data.json");
+    const res = await fetch("https://raw.githubusercontent.com/blackshadowh4ck3r/Files-Store/refs/heads/main/Data.json");
     const data = await res.json();
     folders = data.filter(f => f.show);
     renderFolders();
