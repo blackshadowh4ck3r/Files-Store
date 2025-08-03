@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -10,234 +11,247 @@
       background-color: #121212;
       padding: 20px;
       color: #f1f1f1;
-    }.top-bar {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-}
+    }
 
-.search-input {
-  padding: 8px 12px;
-  font-size: 14px;
-  border: 1px solid #444;
-  background-color: #1e1e1e;
-  color: white;
-  border-radius: 8px;
-  width: 100%;
-  max-width: 250px;
-  margin-bottom: 12px;
-}
+    .top-bar {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
 
-.folder-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  gap: 20px;
-}
+    .search-input {
+      padding: 8px 12px;
+      font-size: 14px;
+      border: 1px solid #444;
+      background-color: #1e1e1e;
+      color: white;
+      border-radius: 8px;
+      width: 100%;
+      max-width: 250px;
+      margin-bottom: 12px;
+    }
 
-.folder-tile {
-  background-color: #1e1e1e;
-  border-radius: 12px;
-  padding: 16px 12px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  cursor: pointer;
-}
+    .folder-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 20px;
+    }
 
-.folder-icon {
-  font-size: 48px;
-  color: #e0bfc0;
-  margin-bottom: 12px;
-}
+    .folder-tile {
+      background-color: #1e1e1e;
+      border-radius: 12px;
+      padding: 16px 12px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      cursor: pointer;
+    }
 
-.folder-label {
-  font-size: 14px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-}
+    .folder-icon-img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      margin-bottom: 12px;
+      filter: brightness(0.95);
+    }
 
-.options-icon {
-  font-size: 16px;
-  cursor: pointer;
-  color: #bbb;
-}
+    .folder-label {
+      font-size: 14px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
 
-.back-button {
-  display: none;
-  margin-bottom: 16px;
-  background: #4285f4;
-  color: white;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-}
+    .options-icon {
+      font-size: 16px;
+      cursor: pointer;
+      color: #bbb;
+    }
 
-.file-list {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
+    .back-button {
+      display: none;
+      margin-bottom: 16px;
+      background: #4285f4;
+      color: white;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
 
-.file-item {
-  background-color: #1e1e1e;
-  padding: 12px;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  border-radius: 8px;
-  font-weight: bold;
-  border-bottom: 1px solid #333;
-  position: relative;
-}
+    .file-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
 
-.file-icon {
-  width: 40px;
-  height: 50px;
-  background-color: #a87c4f;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
-  font-family: monospace;
-  border-radius: 4px;
-  flex-shrink: 0;
-}
+    .file-item {
+      background-color: #1e1e1e;
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      border-radius: 8px;
+      font-weight: bold;
+      border-bottom: 1px solid #333;
+      position: relative;
+    }
 
-.file-name {
-  font-size: 16px;
-  flex-grow: 1;
-}
+    .file-icon {
+      width: 40px;
+      height: 50px;
+      background-color: #a87c4f;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-family: monospace;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
 
-.file-options {
-  font-size: 20px;
-  cursor: pointer;
-  color: #bbb;
-}
+    .file-name {
+      font-size: 16px;
+      flex-grow: 1;
+    }
 
-.popup-menu {
-  position: absolute;
-  top: 100%;
-  right: 8px;
-  background-color: #2a2a2a;
-  border: 1px solid #444;
-  border-radius: 8px;
-  padding: 6px 0;
-  z-index: 100;
-  width: 140px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
-}
+    .file-options {
+      font-size: 20px;
+      cursor: pointer;
+      color: #bbb;
+    }
 
-.popup-menu div {
-  padding: 8px 12px;
-  cursor: pointer;
-  font-size: 14px;
-}
+    .popup-menu {
+      position: absolute;
+      top: 100%;
+      right: 8px;
+      background-color: #2a2a2a;
+      border: 1px solid #444;
+      border-radius: 8px;
+      padding: 6px 0;
+      z-index: 100;
+      width: 140px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
 
-.popup-menu div:hover {
-  background-color: #3a3a3a;
-}
+    .popup-menu div {
+      padding: 8px 12px;
+      cursor: pointer;
+      font-size: 14px;
+    }
 
+    .popup-menu div:hover {
+      background-color: #3a3a3a;
+    }
   </style>
 </head>
-<body>  <div class="top-bar">
-    <input type="text" class="search-input" id="searchInput" placeholder="Search folders..." />
-  </div><button class="back-button" id="backButton">â† Back to folders</button>
+<body>
 
-  <div class="folder-grid" id="folderGrid"></div>
-  <div class="file-list" id="fileList" style="display: none;"></div>  <script>
-    const folderGrid = document.getElementById('folderGrid');
-    const fileList = document.getElementById('fileList');
-    const backButton = document.getElementById('backButton');
-    const searchInput = document.getElementById('searchInput');
+<div class="top-bar">
+  <input type="text" class="search-input" id="searchInput" placeholder="Search folders..." />
+</div>
 
-    let folders = [];
+<button class="back-button" id="backButton">← Back to folders</button>
 
-    async function fetchData() {
-      const res = await fetch("https://raw.githubusercontent.com/aktarruhin14-del/File-storage/refs/heads/main/Data.json");
-      const data = await res.json();
-      folders = data.filter(f => f.show);
-      renderFolders();
-    }
+<div class="folder-grid" id="folderGrid"></div>
+<div class="file-list" id="fileList" style="display: none;"></div>
 
-    function renderFolders(filter = "") {
-      folderGrid.innerHTML = '';
-      fileList.style.display = 'none';
-      folderGrid.style.display = 'grid';
-      backButton.style.display = 'none';
+<script>
+  const folderGrid = document.getElementById('folderGrid');
+  const fileList = document.getElementById('fileList');
+  const backButton = document.getElementById('backButton');
+  const searchInput = document.getElementById('searchInput');
 
-      folders
-        .filter(folder => folder.folderName.toLowerCase().includes(filter.toLowerCase()))
-        .forEach(folder => {
-          const tile = document.createElement('div');
-          tile.className = 'folder-tile';
-          tile.onclick = () => openFolder(folder);
+  let folders = [];
 
-          tile.innerHTML = `
-            <div class="folder-icon">ðŸ“</div>
-            <div class="folder-label">
-              ${folder.folderName}
-              <span class="options-icon">â‹®</span>
-            </div>
-          `;
-          folderGrid.appendChild(tile);
-        });
-    }
+  async function fetchData() {
+    const res = await fetch("https://raw.githubusercontent.com/aktarruhin14-del/File-storage/refs/heads/main/Data.json");
+    const data = await res.json();
+    folders = data.filter(f => f.show);
+    renderFolders();
+  }
 
-    function openFolder(folder) {
-      fileList.innerHTML = '';
-      fileList.style.display = 'flex';
-      folderGrid.style.display = 'none';
-      backButton.style.display = 'inline-block';
+  function renderFolders(filter = "") {
+    folderGrid.innerHTML = '';
+    fileList.style.display = 'none';
+    folderGrid.style.display = 'grid';
+    backButton.style.display = 'none';
 
-      folder.files.filter(file => file.show).forEach(file => {
-        const item = document.createElement('div');
-        item.className = 'file-item';
+    folders
+      .filter(folder => folder.folderName.toLowerCase().includes(filter.toLowerCase()))
+      .forEach(folder => {
+        const tile = document.createElement('div');
+        tile.className = 'folder-tile';
+        tile.onclick = () => openFolder(folder);
 
-        item.innerHTML = `
-          <div class="file-icon">${file.fileExtension.replace('.', '').toUpperCase()}</div>
-          <div class="file-name">${file.fileName} <span style="font-weight: normal; color: #ccc;">(${file.fileSize})</span></div>
-          <div class="file-options">â‹®</div>
+        const imageUrl = folder.imageUrl || 'https://i.imgur.com/oYiTqum.png'; // default image
+
+        tile.innerHTML = `
+          <img src="${imageUrl}" class="folder-icon-img" />
+          <div class="folder-label">
+            ${folder.folderName}
+            <span class="options-icon">⋮</span>
+          </div>
         `;
-
-        const optionsIcon = item.querySelector('.file-options');
-        optionsIcon.addEventListener('click', (e) => {
-          e.stopPropagation();
-          closeAllPopups();
-          const popup = document.createElement('div');
-          popup.className = 'popup-menu';
-          popup.innerHTML = `
-            <div onclick="copyLink('${file.copyLink}')">Copy Link</div>
-            <div onclick="window.open('${file.downloadLink}', '_blank')">Download</div>
-          `;
-          item.appendChild(popup);
-        });
-
-        fileList.appendChild(item);
+        folderGrid.appendChild(tile);
       });
-    }
+  }
 
-    function closeAllPopups() {
-      document.querySelectorAll('.popup-menu').forEach(el => el.remove());
-    }
+  function openFolder(folder) {
+    fileList.innerHTML = '';
+    fileList.style.display = 'flex';
+    folderGrid.style.display = 'none';
+    backButton.style.display = 'inline-block';
 
-    function copyLink(link) {
-      navigator.clipboard.writeText(link).then(() => {
-        alert(`Copied link: ${link}`);
+    folder.files.filter(file => file.show).forEach(file => {
+      const item = document.createElement('div');
+      item.className = 'file-item';
+
+      item.innerHTML = `
+        <div class="file-icon">${file.fileExtension.replace('.', '').toUpperCase()}</div>
+        <div class="file-name">${file.fileName} <span style="font-weight: normal; color: #ccc;">(${file.fileSize})</span></div>
+        <div class="file-options">⋮</div>
+      `;
+
+      const optionsIcon = item.querySelector('.file-options');
+      optionsIcon.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeAllPopups();
+        const popup = document.createElement('div');
+        popup.className = 'popup-menu';
+        popup.innerHTML = `
+          <div onclick="copyLink('${file.copyLink}')">Copy Link</div>
+          <div onclick="window.open('${file.downloadLink}', '_blank')">Download</div>
+        `;
+        item.appendChild(popup);
       });
-      closeAllPopups();
-    }
 
-    backButton.onclick = () => renderFolders();
-    searchInput.addEventListener('input', () => renderFolders(searchInput.value));
-    document.addEventListener('click', closeAllPopups);
+      fileList.appendChild(item);
+    });
+  }
 
-    fetchData();
-  </script></body>
-</html> 
+  function closeAllPopups() {
+    document.querySelectorAll('.popup-menu').forEach(el => el.remove());
+  }
+
+  function copyLink(link) {
+    navigator.clipboard.writeText(link).then(() => {
+      alert(`Copied link: ${link}`);
+    });
+    closeAllPopups();
+  }
+
+  backButton.onclick = () => renderFolders();
+  searchInput.addEventListener('input', () => renderFolders(searchInput.value));
+  document.addEventListener('click', closeAllPopups);
+
+  fetchData();
+</script>
+
+</body>
+</html>
