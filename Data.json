@@ -1,0 +1,29 @@
+[
+  {
+    "folderName": "Imran Hussain Laskar",
+    "show": true,
+    "files": [
+      {
+        "fileName": "File1",
+        "fileSize": "10GB",
+        "fileExtension": ".mp3",
+        "copyLink": "https://www.titanui.com/39211-12-flat-file-type-icons-psd/",
+        "downloadLink": "https://www.google.com",
+        "show": true
+      },
+      {
+        "fileName": "Hidden File",
+        "fileSize": "500MB",
+        "fileExtension": ".zip",
+        "copyLink": "https://example.com/files/hidden",
+        "downloadLink": "https://example.com/download/hidden",
+        "show": true
+      }
+    ]
+  },
+  {
+    "folderName": "Secret Folder",
+    "show": true,
+    "files": []
+  }
+]
