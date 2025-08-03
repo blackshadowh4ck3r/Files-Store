@@ -17,6 +17,8 @@
       display: flex;
       justify-content: center;
       margin-bottom: 20px;
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
     .search-input {
@@ -28,7 +30,6 @@
       border-radius: 8px;
       width: 100%;
       max-width: 250px;
-      margin-bottom: 12px;
     }
 
     .folder-grid {
@@ -74,7 +75,7 @@
 
     .back-button {
       display: none;
-      margin-bottom: 16px;
+      margin: 16px 0;
       background: #4285f4;
       color: white;
       padding: 8px 16px;
@@ -154,6 +155,7 @@
 
 <div class="top-bar">
   <input type="text" class="search-input" id="searchInput" placeholder="Search folders..." />
+  <input type="text" class="search-input" id="fileSearchInput" placeholder="Search files..." style="display: none;" />
 </div>
 
 <button class="back-button" id="backButton">← Back to folders</button>
@@ -166,8 +168,10 @@
   const fileList = document.getElementById('fileList');
   const backButton = document.getElementById('backButton');
   const searchInput = document.getElementById('searchInput');
+  const fileSearchInput = document.getElementById('fileSearchInput');
 
   let folders = [];
+  let currentFolder = null;
 
   async function fetchData() {
     const res = await fetch("https://raw.githubusercontent.com/blackshadowh4ck3r/Files-Store/refs/heads/main/Data.json");
@@ -181,6 +185,7 @@
     fileList.style.display = 'none';
     folderGrid.style.display = 'grid';
     backButton.style.display = 'none';
+    fileSearchInput.style.display = 'none';
 
     folders
       .filter(folder => folder.folderName.toLowerCase().includes(filter.toLowerCase()))
@@ -189,7 +194,7 @@
         tile.className = 'folder-tile';
         tile.onclick = () => openFolder(folder);
 
-        const imageUrl = folder.imageUrl || 'https://api.removal.ai/download/g1/preview/7d18dfbd-cd72-4052-983d-f2d2ad6f0f41.png'; // default image
+        const imageUrl = folder.imageUrl || 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgRfZHukGJnIhyphenhyphen3Yo_5gLpxtIqsHQbY9eyJ3uHI-qQEcX7OvA3SMixdOt1-zjpFiXmvwzsjxkVnWz1uWAReZ7qdfQiSIxCUd3sOL1fkpNWlkM1x-cGnPCyfqejxdh0YgpmwXVsThWpLacLMeM1RRw8A66QB04ralG5aPDEO4DM2NfJ2eh_ZZWrmsw1jze8s/s320/1caac431-872a-4c00-b330-688ef6617399_removalai_preview.png'; // default folder icon image
 
         tile.innerHTML = `
           <img src="${imageUrl}" class="folder-icon-img" />
@@ -203,12 +208,26 @@
   }
 
   function openFolder(folder) {
-    fileList.innerHTML = '';
+    currentFolder = folder;
+    fileSearchInput.value = '';
+    renderFiles('');
     fileList.style.display = 'flex';
     folderGrid.style.display = 'none';
     backButton.style.display = 'inline-block';
+    fileSearchInput.style.display = 'inline-block';
+  }
 
-    folder.files.filter(file => file.show).forEach(file => {
+  function renderFiles(filter = '') {
+    fileList.innerHTML = '';
+
+    const filteredFiles = currentFolder.files.filter(file =>
+      file.show && (
+        file.fileName.toLowerCase().includes(filter.toLowerCase()) ||
+        file.fileExtension.toLowerCase().includes(filter.toLowerCase())
+      )
+    );
+
+    filteredFiles.forEach(file => {
       const item = document.createElement('div');
       item.className = 'file-item';
 
@@ -246,8 +265,13 @@
     closeAllPopups();
   }
 
-  backButton.onclick = () => renderFolders();
+  backButton.onclick = () => {
+    currentFolder = null;
+    renderFolders();
+  };
+
   searchInput.addEventListener('input', () => renderFolders(searchInput.value));
+  fileSearchInput.addEventListener('input', () => renderFiles(fileSearchInput.value));
   document.addEventListener('click', closeAllPopups);
 
   fetchData();
