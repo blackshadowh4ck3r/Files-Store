@@ -118,6 +118,38 @@
       }
     ]
   },
+  {
+  "folderName": "Source Code",
+    "show": true,
+    "files": [
+      {
+        "fileName": "Flashlight.txt",
+        "fileSize": "1.0KB",
+        "fileExtension": ".txt",
+        "copyLink": " ",
+        "downloadLink": " ",
+        "show": true
+      },
+
+  {
+        "fileName": "Toast_message.txt",
+        "fileSize": "1.0KB",
+        "fileExtension": ".txt",
+        "copyLink": " ",
+        "downloadLink": " ",
+        "show": true
+      },
+      
+      {
+        "fileName": "config.txt",
+        "fileSize": "0.0KB",
+        "fileExtension": ".txt",
+        "copyLink": "https://example.com/files/hidden",
+        "downloadLink": "https://example.com/download/hidden",
+        "show": true
+      }
+    ]
+  },
   
   {
     "folderName": "Secret Folder",
