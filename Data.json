@@ -35,9 +35,9 @@
         "show": true
       },
       {
-        "fileName": "Hidden File",
-        "fileSize": "500MB",
-        "fileExtension": ".zip",
+        "fileName": "config.txt",
+        "fileSize": "0.0KB",
+        "fileExtension": ".txt",
         "copyLink": "https://example.com/files/hidden",
         "downloadLink": "https://example.com/download/hidden",
         "show": true
