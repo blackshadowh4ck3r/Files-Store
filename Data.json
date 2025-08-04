@@ -86,7 +86,18 @@
       }
     ]
   },
-
+{
+    "folderName": "Source Code",
+    "show": true,
+    "files": [
+      {
+        "fileName": "Flashlight.txt",
+        "fileSize": "7.0KB",
+        "fileExtension": ".txt",
+        "copyLink": "https://www.titanui.com/39211-12-flat-file-type-icons-psd/",
+        "downloadLink": "https://www.google.com",
+        "show": true
+      },
   
   {
     "folderName": "Secret Folder",
