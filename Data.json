@@ -86,18 +86,37 @@
       }
     ]
   },
-{
-    "folderName": "Source Code",
+  "folderName": "ModApps",
     "show": true,
     "files": [
       {
-        "fileName": "Flashlight.txt",
-        "fileSize": "7.0KB",
-        "fileExtension": ".txt",
-        "copyLink": "https://www.titanui.com/39211-12-flat-file-type-icons-psd/",
-        "downloadLink": "https://www.google.com",
+        "fileName": "Netflix.apk",
+        "fileSize": "5.78MB",
+        "fileExtension": ".apk",
+        "copyLink": "https://getmodsapk.com/dl-track/netflix-modded-apk/154455",
+        "downloadLink": "https://getmodsapk.com/dl-track/netflix-modded-apk/154455",
         "show": true
       },
+
+  {
+        "fileName": "ChatGPT-Premium.apk",
+        "fileSize": "51.75MB",
+        "fileExtension": ".apk",
+        "copyLink": "https://getmodsapk.com/dl-track/2130-chatgpt-free-premium-apk/129012",
+        "downloadLink": "https://getmodsapk.com/dl-track/2130-chatgpt-free-premium-apk/129012",
+        "show": true
+      },
+      
+      {
+        "fileName": "config.txt",
+        "fileSize": "0.0KB",
+        "fileExtension": ".txt",
+        "copyLink": "https://example.com/files/hidden",
+        "downloadLink": "https://example.com/download/hidden",
+        "show": true
+      }
+    ]
+  },
   
   {
     "folderName": "Secret Folder",
